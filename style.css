@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* === UBAH BARIS DI BAWAH INI === */
+    background: url('hacked.gif') no-repeat center center fixed; 
+    /* =============================== */
+    
+    background-size: cover; /* Ini akan membuat GIF 498x373px Anda menutupi seluruh layar */
+    color: #e0e0e0;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Lapisan overlay agar teks mudah dibaca */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Lapisan hitam transparan 75% */
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    position: relative; /* Pastikan konten berada di atas overlay */
+    z-index: 1;
+}
+
+/* --- Bagian Halaman "Diretas" --- */
+#hacked-section .icon {
+    font-size: 80px;
+    animation: shake 0.5s infinite;
+}
+
+#hacked-section h1 {
+    color: #ff4d4d;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d;
+}
+
+#hacked-section h2 {
+    color: #f5f5f5;
+    font-size: 1.5rem;
+}
+
+#hacked-section .subtitle {
+    color: #b0b0b0;
+    margin-bottom: 40px;
+}
+
+#reveal-button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#reveal-button:hover {
+    background-color: #0088cc;
+    transform: scale(1.05);
+}
+
+/* --- Bagian Penjelasan --- */
+#explanation-section h1 {
+    color: #4caf50; /* Hijau untuk menandakan aman */
+}
+
+/* Di dalam #explanation-section */
+#explanation-section .simulation-header {
+    display: flex; /* Membuat elemen di dalamnya berjejer horizontal */
+    align-items: center; /* Membuat item sejajar vertikal di tengah */
+    margin-bottom: 5px; /* Beri jarak dengan teks di bawahnya */
+    justify-content: center;
+}
+
+#explanation-section .simulation-header h1 {
+    color: #4caf50;
+    font-size: 2rem; /* Ukuran font teks simulasi */
+    margin-left: 15px; /* Beri jarak antara gambar dan teks */
+    line-height: 1; /* Pastikan line-height tidak terlalu besar */
+}
+
+#explanation-section .tpboong-image {
+    /* Ubah width menjadi auto agar proporsi terjaga */
+    width: auto;
+    /* Atur tinggi agar sejajar dengan perkiraan tinggi teks h1 */
+    height: 5.5em; /* Coba nilai ini, sesuaikan jika perlu */
+    display: inline-block; /* Agar bisa disejajarkan dengan teks */
+    vertical-align: middle; /* Alternatif untuk perataan vertikal */
+    
+}
+
+#explanation-section .content {
+    text-align: left;
+    margin-top: 20px;
+    background-color: rgba(30, 30, 30, 0.9); /* Ubah background agar sedikit transparan */
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #4caf50;
+}
+
+#explanation-section ul {
+    list-style-type: '✔  ';
+    padding-left: 25px;
+}
+
+#explanation-section li {
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #888;
+}
+
+/* =================================== */
+/* === Style untuk Tampilan Mobile === */
+/* =================================== */
+@media (max-width: 768px) {
+
+    /* BARIS BARU: Mengubah perataan vertikal ke atas */
+    body {
+        align-items: flex-start; /* PENTING: Konten dimulai dari atas */
+        padding-top: 30px;       /* Beri jarak dari tepi atas layar */
+        padding-bottom: 30px;    /* Beri jarak di bawah agar tidak mentok */
+    }
+
+    /* Kecilkan ukuran font judul utama */
+    #hacked-section h1 {
+        font-size: 2.5rem;
+    }
+    #hacked-section h2 {
+        font-size: 1.2rem;
+    }
+
+    #explanation-section .simulation-header h1 {
+        font-size: 1.5rem; /* Ukuran font lebih kecil di mobile */
+    }
+    #explanation-section .tpboong-image {
+        /* Sesuaikan tinggi gambar di mobile */
+        height: 4.5em; /* Coba nilai ini, sesuaikan jika perlu */
+        margin-left: 15px;
+    }
+
+    /* Kecilkan font di bagian penjelasan */
+    #explanation-section h1 {
+        font-size: 1.7rem;
+    }
+    #explanation-section h2 {
+        font-size: 1.1rem;
+    }
+    
+    #explanation-section p, 
+    #explanation-section li {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Kurangi padding agar konten lebih lega */
+    .container {
+        padding: 10px;
+    }
+    #explanation-section .content {
+        padding: 15px;
+    }
+    #explanation-section ul {
+        padding-left: 20px;
+    }
+}
+
+/* Animasi */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
