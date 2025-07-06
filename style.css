@@ -114,7 +114,7 @@ body::before {
 
 #explanation-section .content {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: rgba(30, 30, 30, 0.9); /* Ubah background agar sedikit transparan */
     padding: 20px;
     border-radius: 8px;
