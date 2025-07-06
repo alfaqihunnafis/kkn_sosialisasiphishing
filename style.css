@@ -91,7 +91,7 @@ body::before {
 #explanation-section .simulation-header {
     display: flex; /* Membuat elemen di dalamnya berjejer horizontal */
     align-items: center; /* Membuat item sejajar vertikal di tengah */
-    margin-bottom: 5px; /* Beri jarak dengan teks di bawahnya */
+    margin-top: 6px;
     justify-content: center;
 }
 
@@ -132,8 +132,9 @@ body::before {
 }
 
 .footer {
-    margin-top: 20px;
+    margin-top: 12px;
     text-align: center;
+    line-height: 5px;
     color: #888;
 }
 
